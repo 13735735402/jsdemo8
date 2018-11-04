@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>js多层引号嵌套思路</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			#box {
+				width: 600px;
+				margin: 0 auto;
+				padding: 10px;
+				font-size: 14px;
+				font-family: "微软雅黑";
+			}
+			#box button {
+				padding: 5px 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<h3>单层引号</h3>
+			不用解释，使用'单引号'和"双引号"都没问题。
+			<button onclick='alert(123)'>我是按钮1</button>
+			<h3>双层引号</h3>
+			最外层使用'单引号'，里层使用"双引号"。
+			<button onclick='alert("我是双层引号嵌套")'>我是按钮2</button>
+			<h3>三层引号</h3>
+			最外层使用'单引号'，第二层\'将单引号转译\'，最里层使用"双引号"。
+			<script type="text/javascript">
+				var button2 = '<button onclick=\'alert("我是三层引号嵌套")\'>我是按钮3</button>';
+				document.getElementById("box").innerHTML += button2;
+			</script>
+		</div>
+	</body>
+</html>
